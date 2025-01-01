@@ -1,0 +1,51 @@
+
+/etc/nginx/conf.d/
+
+docker exec -it portfolio-website ls /usr/share/nginx/html
+
+docker exec -it portfolio-website ls /etc/nginx/conf.d/
+
+docker exec -it portfolio-website ls /etc/letsencrypt/live/vibte.xyz
+
+
+
+# 1. Stop everything
+docker-compose down
+
+# 2. Remove existing certbot files
+sudo rm -rf ./certbot/conf/*
+sudo rm -rf ./certbot/www/*
+
+# 3. Create fresh directories
+sudo mkdir -p ./certbot/conf
+sudo mkdir -p ./certbot/www
+sudo chmod -R 755 ./certbot
+
+# 4. Start nginx with HTTP only
+docker-compose up -d portfolio-web
+
+# 5. Get the SSL certificate
+docker-compose run --rm certbot certonly \
+  --webroot \
+  --webroot-path /var/www/certbot \
+  --email vibte740@gmail.com \
+  --agree-tos \
+  --no-eff-email \
+  -d vibte.xyz
+
+# 6. Once certificates are generated successfully, stop nginx
+docker-compose down
+
+# 7. Uncomment the HTTPS server block in nginx.conf
+
+# 8. Start everything up again
+docker-compose up -d
+
+------------------------------------
+
+# Set proper ownership
+sudo chown -R $USER:$USER portfolio-project/
+
+# Set proper permissions
+chmod -R 755 portfolio/
+chmod -R 700 certbot/conf/
