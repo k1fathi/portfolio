@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Developer Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        background: #0a192f;
+        color: #8892b0;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      nav {
+        position: fixed;
+        width: 100%;
+        padding: 1.5rem 0;
+        background: rgba(10, 25, 47, 0.85);
+        backdrop-filter: blur(10px);
+        z-index: 100;
+      }
+
+      .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #64ffda;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        color: #8892b0;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: #64ffda;
+      }
+
+      section {
+        min-height: 100vh;
+        padding: 2rem 0;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      h1 {
+        font-size: 4rem;
+        color: #ccd6f6;
+        margin-bottom: 1rem;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        color: #ccd6f6;
+        margin-bottom: 2rem;
+      }
+
+      .highlight {
+        color: #64ffda;
+      }
+
+      .bio {
+        max-width: 600px;
+        margin-bottom: 2rem;
+      }
+
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .project-card {
+        background: #112240;
+        padding: 2rem;
+        border-radius: 4px;
+        transition: transform 0.3s;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .project-title {
+        color: #ccd6f6;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .skill-tag {
+        background: rgba(100, 255, 218, 0.1);
+        color: #64ffda;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.875rem;
+      }
+
+      .contact {
+        text-align: center;
+      }
+
+      .btn {
+        display: inline-block;
+        background: transparent;
+        color: #64ffda;
+        border: 1px solid #64ffda;
+        padding: 1rem 2rem;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: all 0.3s;
+        margin-top: 2rem;
+      }
+
+      .btn:hover {
+        background: rgba(100, 255, 218, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 3rem;
+        }
+
+        h2 {
+          font-size: 2rem;
+        }
+
+        .nav-links {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="container nav-content">
+        <div class="logo">
+          <script
+            src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+            type="module"
+          ></script>
+
+          <dotlottie-player
+            src="https://lottie.host/f0d11f10-afdd-4efe-9700-39f65e17c812/5hbFYraYh9.json"
+            background="transparent"
+            speed="1"
+            style="width: 50px; height: 50px"
+            loop
+            autoplay
+          ></dotlottie-player>
+        </div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#work">Work</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <section class="hero" id="about">
+        <p class="highlight">Hi, my name is</p>
+        <h1>Javad Fathi</h1>
+        <h2>I build things for the web.</h2>
+        <div class="bio">
+          15+ year results-oriented leader with expertise in project execution
+          and team management. Proven ability to deliver innovative solutions,
+          manage databases, and exceed expectations in dynamic environments.
+          Skilled in strategic planning, stakeholder communication, and leading
+          high-performing teams. Possesses strong technical skills in Python,
+          ASP.NET, and PHP. Highlights key skills (Strategic Project Leadership,
+          Stakeholder Communication) while removing redundant information.
+        </div>
+        <div class="skills">
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">ASP.NET</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">SQL Server</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">MongoDB</span>
+        </div>
+      </section>
+
+      <section id="work">
+        <h2>Projects Developed Recently</h2>
+        <div class="projects">
+          <div class="project-card">
+            <h3 class="project-title">Vibte News</h3>
+            <p>
+              Vibte News is a Python/Flask-based platform automating headline
+              news aggregation and distribution. It collects articles on
+              technology, Python Flask, generative AI, and MongoDB, storing them
+              in a MongoDB database. Using APIs, Vibte News automatically
+              publishes full articles to WordPress and concise summaries to
+              X.com. Docker containers ensure consistent performance and
+              scalability. Optionally, generative AI creates summaries and
+              headlines, further automating content creation. Vibte News
+              streamlines staying informed about the tech world, providing a
+              scalable and efficient solution for content curation and
+              distribution.
+            </p>
+            <div class="skills">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Wordpress</span>
+              <span class="skill-tag">MongoDB</span>
+              <span class="skill-tag">AI</span>
+              <span class="skill-tag">x.com</span>
+            </div>
+          </div>
+          <div class="project-card">
+            <h3 class="project-title">
+              Personal Data Protection Authority, Complaint System
+            </h3>
+            <p>
+              The "KVKK Şikayet Modülü Kılavuzu" is a user guide provided by the
+              Turkish Personal Data Protection Authority (KVKK) to assist
+              individuals in submitting complaints regarding personal data
+              violations. Accessible via the KVKK website or through the
+              e-Government portal, the module allows users to file complaints
+              directly.
+            </p>
+            <h3>Accessing the Complaint Module</h3>
+            <ul>
+              <li>
+                Visit <a href="https://www.kvkk.gov.tr">www.kvkk.gov.tr</a> and
+                select "İlgili Kişi Şikayet Bildirimi" on the homepage.
+              </li>
+              <li>
+                Alternatively, access the module through the e-Government
+                system.
+              </li>
+            </ul>
+            <br/>
+            <h3>Filing a Complaint</h3>
+            <h5>Profile Completion</h5>
+            <ul>
+              <li>Log in using e-Government credentials.</li>
+              <li>
+                Ensure your profile is 100% complete; incomplete profiles cannot
+                submit complaints.
+              </li>
+              <li>
+                Update personal information, including obtaining a 10-digit
+                address number from
+                <a href="https://adres.nvi.gov.tr/VatandasIslemleri/AdresSorgu"
+                  >https://adres.nvi.gov.tr/VatandasIslemleri/AdresSorgu</a
+                >
+                if necessary.
+              </li>
+            </ul>
+
+            <h5>Submitting a Complaint</h5>
+            <ul>
+              <li>
+                After completing your profile, navigate to "Şikayetler" and
+                select "Yeni Şikayet Oluştur."
+              </li>
+              <li>
+                Provide detailed information about the complaint, including the
+                data controller's details and the nature of the violation.
+              </li>
+              <li>Attach any supporting documents as evidence.</li>
+            </ul>
+
+            <h5>Review and Submission</h5>
+            <ul>
+              <li>Review the entered information for accuracy.</li>
+              <li>
+                Submit the complaint; a confirmation message will appear upon
+                successful submission.
+              </li>
+            </ul>
+
+            <p>
+              The guide emphasizes that only individuals submitting complaints
+              on their own behalf can use the module; representatives or
+              guardians cannot file on behalf of others through this system.
+              Additionally
+            </p>
+
+            <div class="skills">
+              <span class="skill-tag">Aspnet 7</span>
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">MS Sqlserver</span>
+            </div>
+          </div>
+          <div class="project-card">
+            <h3 class="project-title">Vibte AI</h3>
+           <p>
+          Vibte AI is a project focused on building a custom AI model to enhance
+          user engagement and content relevance on a platform (like a website or
+          app). The core idea revolves around creating a model from scratch
+          using TensorFlow, a powerful open-source machine learning library.
+          This approach allows for granular control over the model's
+          architecture and training process, tailoring it specifically to the
+          platform's needs.
+        </p>
+        <p>
+          The unique aspect of Vibte AI lies in its training methodology: it
+          leverages real-time customer reactions and interactions on the
+          platform. This means the model learns directly from user behavior,
+          such as clicks, likes, shares, comments, and time spent on specific
+          content. This feedback loop creates a dynamic learning environment,
+          allowing the model to continuously improve its understanding of user
+          preferences.
+        </p>
+        <p>
+          The development process involves defining the model's architecture
+          within TensorFlow, selecting appropriate algorithms, and designing a
+          data pipeline to efficiently process user interaction data. This data
+          is then used to train the model, iteratively adjusting its parameters
+          to optimize performance. By training on real user data, Vibte AI aims
+          to provide highly personalized recommendations, content suggestions,
+          and overall improved user experience. This approach ensures the model
+          stays relevant and adapts to evolving user trends, ultimately driving
+          engagement and satisfaction.
+        </p>
+            <div class="skills">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">TensorFlow</span>
+              <span class="skill-tag">PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
+        <p>
+          I'm currently looking for new opportunities. Whether you have a
+          question or just want to say hi, I'll try my best to get back to you!
+        </p>
+        <a href="mailto:hello@example.com" class="btn">Say Hello</a>
+      </section>
+    </main>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Animate sections on scroll
+      gsap.utils.toArray("section").forEach((section) => {
+        gsap.to(section, {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 80%",
+          },
+        });
+      });
+
+      // Animate project cards
+      gsap.utils.toArray(".project-card").forEach((card, i) => {
+        gsap.from(card, {
+          opacity: 0,
+          y: 30,
+          duration: 0.8,
+          delay: i * 0.2,
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+          },
+        });
+      });
+
+      // Animate skills tags
+      gsap.utils.toArray(".skill-tag").forEach((tag, i) => {
+        gsap.from(tag, {
+          opacity: 0,
+          scale: 0.8,
+          duration: 0.4,
+          delay: i * 0.1,
+          ease: "back.out",
+          scrollTrigger: {
+            trigger: tag,
+            start: "top 90%",
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
